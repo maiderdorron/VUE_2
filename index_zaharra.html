@@ -34,12 +34,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>  
-    <script>
 
-    // Add the Firebase services that you want to use
-    import "firebase/auth";
-    import "firebase/firestore";
-    </script>
 </head>
 
 <body id="page-top" class="index">
@@ -295,34 +290,38 @@
         }
     });
 
-    // Your web app's Firebase configuration
+    import * as firebase from "firebase/app";
+    // Add the Firebase services that you want to use
+    import "firebase/auth";
+    import "firebase/firestore";
+  // Your web app's Firebase configuration
     var firebase = require("firebase/app");
+
     // Add the Firebase products that you want to use
     require("firebase/auth");
     require("firebase/firestore");
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyC13Q7JzepwZEj2BAy-xHOxSh80zgsQ5k8",
-        authDomain: "agenda2-43d2c.firebaseapp.com",
-        databaseURL: "https://agenda2-43d2c.firebaseio.com",
-        projectId: "agenda2-43d2c",
-        storageBucket: "agenda2-43d2c.appspot.com",
-        messagingSenderId: "630665943868",
-        appId: "1:630665943868:web:883551a32a312c9db1dc39",
-        measurementId: "G-N2N0VJTGWX",
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC13Q7JzepwZEj2BAy-xHOxSh80zgsQ5k8",
+    authDomain: "agenda2-43d2c.firebaseapp.com",
+    databaseURL: "https://agenda2-43d2c.firebaseio.com",
+    projectId: "agenda2-43d2c",
+    storageBucket: "agenda2-43d2c.appspot.com",
+    messagingSenderId: "630665943868",
+    appId: "1:630665943868:web:883551a32a312c9db1dc39",
+    measurementId: "G-N2N0VJTGWX",
   };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
     // Firebase App (the core Firebase SDK) is always required and
     // must be listed before other Firebase SDKs
-
 
     </script>
 
