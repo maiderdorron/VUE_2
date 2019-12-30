@@ -29,6 +29,21 @@
 
     <script src="js/vue.js"></script>   
 
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/7.6.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#available-libraries -->
+	  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/6.2.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+  <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+  	<!-- Initialize Firebase -->
+	<script src="/__/firebase/init.js"></script>
 </head>
 
 <body id="page-top" class="index">
@@ -233,6 +248,18 @@
 </body>
 
 <script type="text/javascript">
+	var firebaseConfig = {
+    apiKey: "AIzaSyCSqc5mwfXC9SqdSNE4But2mDzOMHExh80",
+    authDomain: "vueagendame.firebaseapp.com",
+    databaseURL: "https://vueagendame.firebaseio.com",
+    projectId: "vueagendame",
+    storageBucket: "vueagendame.appspot.com",
+    messagingSenderId: "208672556256",
+    appId: "1:208672556256:web:e24a46585291ce705d7c85"
+	};
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.database();
+
     var app = new Vue({
     el:'#app',
     data:{
@@ -262,6 +289,11 @@
         },
         saveContacto: function(event){
             this.lista_Contactos.push( { nombre: this.nombre, email: this.email, telf: this.telf } );
+            db.ref('contacto/').add({
+            	nombre: this.nombre,
+            	email: this.email,
+            	telf: this.telf
+            });
             this.newContacto.nombre = "";
             this.newContacto.email = "";
             this.newContacto.telf = "";
@@ -270,5 +302,6 @@
         }
         }
     })
+
     </script>
 </html>
